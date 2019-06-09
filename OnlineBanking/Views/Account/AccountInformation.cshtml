@@ -1,0 +1,22 @@
+﻿@model OnlineBanking.ViewModels.AccountInformationViewModel
+<div class="card" id="welcome">
+    <h1>Account Information :</h1>
+
+    <div>
+
+        @foreach (var transactions in Model.accountInformation)
+        {
+
+
+            <h3>AccountId: @transactions.AccountId </h3>
+            <p>Frequency: @transactions.Frequency</p>
+            <p>Created: @transactions.Created</p>
+            <p>Balance: @transactions.Balance</p>
+           
+        }
+
+    </div>
+</div>
+
+
+

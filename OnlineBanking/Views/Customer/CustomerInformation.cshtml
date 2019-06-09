@@ -1,0 +1,36 @@
+﻿@model OnlineBanking.ViewModels.CustomerInformationViewModel
+    <div class="card" id="welcome">
+        <h1>Customer Information :</h1>
+
+        <div>
+
+            <h3>Customer Id: @Model.customerInfo.CustomerId</h3>
+            <h3>Name: @Model.customerInfo.Givenname @Model.customerInfo.Surname</h3>
+
+            <p>City: @Model.customerInfo.City</p>
+            <p>Country: @Model.customerInfo.Country</p>
+            <p>Telephone: @Model.customerInfo.Telephonenumber</p>
+            <p>Total Balance @Model.totalBalance</p>
+            <h2>Accounts</h2>
+            @foreach (var accounts in Model.accountInfo)
+            {
+                <h3>Account Number @accounts.AccountId</h3>
+                <p>Balance: @accounts.Balance</p>
+                <p>Created: @accounts.Created</p>
+
+            }
+
+            <h3><a asp-controller="Customer" asp-action="updateCustomer" asp-route-id="@Model.customerInfo.CustomerId"> Edit Customer Info</a></h3>
+
+
+        </div>
+</div>
+
+
+
+
+
+
+
+
+

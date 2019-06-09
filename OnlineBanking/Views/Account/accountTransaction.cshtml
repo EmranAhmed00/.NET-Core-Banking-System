@@ -1,0 +1,32 @@
+﻿@model OnlineBanking.ViewModels.AccountInformationViewModel
+
+
+
+<h1>Transactions </h1>
+
+<div id="myTarget">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    TransactionId
+                </th>
+                <th>
+                    Amount
+                </th>
+                <th>
+                    Balance
+                </th>
+                <th>Date</th>
+                <th> Operation </th>
+            </tr>
+        </thead>
+        <tbody>
+            <partial name="_TransactionRows" model="@Model" />
+        </tbody>
+    </table>
+
+
+</div>
+
+

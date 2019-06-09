@@ -1,0 +1,82 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using OnlineBanking.Data
+
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager
+
+
+
+    <div>
+
+    
+
+        @if (signInManager.IsSignedIn(User))
+        {
+            <ul class="rightMenu">
+            
+                <a role="button" class="btn btn-block  btn-info" asp-controller="IdentityAccount" asp-action="LogOff">Sign Out</a>
+
+                @if (User.IsInRole("admin"))
+                {
+                    <h1 class="alert-success"> Signed as  Admin:  @userManager.GetUserName(User)</h1>
+
+
+                    <a role="button" class="btn btn-lg active btn-block btn-info" asp-controller="IdentityAccount" asp-action="Register">Register</a>
+                    @*<li><a asp-controller="Admin" asp-action="Index">Admin</a> </li>*@
+
+                }
+
+                else if (User.IsInRole("cashier"))
+                {
+
+                    <h2 class="alert-success"> Signed as  Cashier:  @userManager.GetUserName(User)</h2>
+
+                    <div class="navbar-nav flex-grow-1" id="nav">
+
+                        <div class="col-sm-2">
+                            <a role="button" class="btn btn-sm btn-block btn-info" asp-area="" asp-controller="Customer" asp-action="CreateCustomer">Create Account</a>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <a role="button" class="btn btn-sm btn-block btn-info" asp-area="" asp-controller="Customer" asp-action="Statistics">Statistics</a>
+                        </div>
+
+
+                        <div class="col-sm-2">
+                            <a role="button" class="btn btn-sm btn-block btn-info" asp-area="" asp-controller="Customer" asp-action="SearchCustomer">Search Customer</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a role="button" class="btn btn-sm btn-block btn-info" asp-area="" asp-controller="Customer" asp-action="searchByCustomerId">Search By ID</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a role="button" class="btn btn-sm btn-block btn-info" asp-area="" asp-controller="Account" asp-action="SearchAccount">Account</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a role="button" class="btn btn-sm btn-block btn-info" asp-area="" asp-controller="Transaction" asp-action="Deposit">Deposit</a>
+                        </div>
+                        <div class="col-sm-1.5">
+                            <a role="button" class="btn btn-sm btn-block btn-info" asp-area="" asp-controller="Transaction" asp-action="Transfer">Transfer</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <a role="button" class="btn btn-sm btn-block btn-info" asp-area="" asp-controller="Transaction" asp-action="WithDrawal">Withdraw</a>
+                        </div>
+                    </div>
+
+                }
+
+            </ul>
+        }
+        else
+        {
+    <div class="container">
+
+     
+        <h1 class="alert-heading"><a role="button" class="btn btn-lg  btn-block btn-info" asp-controller="IdentityAccount" asp-action="Login">Login</a></h1>
+   
+        <br />
+   
+    </div>
+
+        }
+
+    </div>

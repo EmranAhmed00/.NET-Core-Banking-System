@@ -1,0 +1,102 @@
+﻿@model OnlineBanking.ViewModels.CreateCustomerViewModel
+
+
+<div class="card" id="welcome">
+    
+    <br />
+    <h2> Create New Account </h2>
+</div>
+<br />
+
+<form asp-controller="Customer" asp-action="CreateCustomer" method="post" id="create">
+
+    <label>Gender</label>
+    <br />
+    <input asp-for="@Model.Gender" maxlength="20" />
+    <span asp-validation-for="@Model.Gender" class="text-danger"></span>
+
+    <br />
+    <label>Givenname</label>
+
+    <br />
+    <input asp-for="@Model.Givenname" maxlength="20" />
+    <span asp-validation-for="@Model.Givenname" class="text-danger"></span>
+    <br />
+
+    <label>Surname</label>
+    <br />
+    <input asp-for="@Model.Surname" maxlength="40" />
+    <span asp-validation-for="@Model.Surname" class="text-danger"></span>
+    <br />
+
+    <label>Streetaddress</label>
+    <br />
+    <input asp-for="@Model.Streetaddress" maxlength="50" />
+    <span asp-validation-for="@Model.Streetaddress" class="text-danger"></span>
+    <br />
+
+    <label>City</label>
+    <br />
+    <input asp-for="@Model.City" maxlength="20" />
+    <span asp-validation-for="@Model.City" class="text-danger"></span>
+    <br />
+
+
+    <label>Zipcode</label>
+    <br />
+    <input asp-for="@Model.Zipcode" maxlength="20" />
+    <span asp-validation-for="@Model.Zipcode" class="text-danger"></span>
+    <br />
+
+    <label>Country</label>
+    <br />
+    <input asp-for="@Model.Country" maxlength="30" />
+    <span asp-validation-for="@Model.Country" class="text-danger"></span>
+
+    <br />
+    <label>CountryCode</label>
+    <br />
+    <input asp-for="@Model.CountryCode" maxlength="20" />
+    <span asp-validation-for="@Model.CountryCode" class="text-danger"></span>
+    <br />
+
+
+    <label>Birth Date</label>
+    <br />
+    <input asp-for="@Model.Birthday" maxlength="20" />
+    <span asp-validation-for="@Model.Birthday" class="text-danger"></span>
+    <br />
+
+    <label>NationalId</label>
+
+    <br />
+    <input asp-for="@Model.NationalId" maxlength="30" />
+    <span asp-validation-for="@Model.NationalId" class="text-danger"></span>
+    <br />
+
+    <label>Telephonecountrycode</label>
+    <br />
+    <input asp-for="@Model.Telephonecountrycode" maxlength="5" />
+    <span asp-validation-for="@Model.Telephonecountrycode" class="text-danger"></span>
+    <br />
+
+    <label>Telephonenumber</label>
+    <br />
+    <input asp-for="@Model.Telephonenumber" maxlength="30" />
+    <span asp-validation-for="@Model.Telephonenumber" class="text-danger"></span>
+    <br />
+
+    <label>Email</label>
+    <br />
+    <input asp-for="@Model.Emailaddress" maxlength="30" />
+    <span asp-validation-for="@Model.Emailaddress"class="text-danger"></span>
+    <br />
+    <br />
+
+    <button type="submit" class="btn btn-primary">Register</button>
+    <br /><br /> <br />
+
+
+</form>
+
+    <br /><br />

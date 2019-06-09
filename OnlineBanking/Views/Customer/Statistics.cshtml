@@ -1,0 +1,17 @@
+﻿@model OnlineBanking.ViewModels.StatisticsViewModel
+
+
+<div class="card" id="welcome">
+<h1>Statistics:</h1>
+</div>
+
+
+<div class="card" id="Statistics">
+    <table>
+        <tr>
+            <td> <h2>Total Customers:<br /> @Model.NumberOfCustomers</h2></td>
+            <td><h2>Total Accounts:<br /> @Model.NumberOfAccounts</h2></td>
+            <td> <h2>Total Balance:<br /> @Model.TotalBalance</h2></td>
+        </tr>
+    </table>
+</div>

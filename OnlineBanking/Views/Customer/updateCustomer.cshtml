@@ -1,0 +1,68 @@
+﻿
+@model OnlineBanking.ViewModels.CustomerInformationViewModel
+
+<h3>  Update Customer Information:</h3>
+
+
+
+
+<div class="row justify-content-center">
+
+
+    <form asp-controller="Customer" asp-action="updateCustomer">
+
+        <h3>Name: @Model.customerInfo.Givenname @Model.customerInfo.Surname</h3>
+        <label>Gender</label>
+       
+        <p> <input asp-for="@Model.customerInfo.Gender"></p>
+       
+        <label>Givenname</label>
+        <p><input asp-for="@Model.customerInfo.Givenname" /></p>
+        <label>Surname</label>
+   
+        <p><input asp-for="@Model.customerInfo.Surname" /></p>
+
+        <label>Streetaddress</label>
+        <p><input asp-for="@Model.customerInfo.Streetaddress" /></p>
+
+        <label>City</label>
+
+        <p><input asp-for="@Model.customerInfo.City" /></p>
+        <label>Zipcode</label>
+     
+        <p><input asp-for="@Model.customerInfo.Zipcode" /></p>
+        <label>Country</label>
+       
+        <p><input asp-for="@Model.customerInfo.Country" /></p>
+       
+        <label>CountryCode</label>
+        <p><input asp-for="@Model.customerInfo.CountryCode" /></p>
+        <label>Birth Date</label>
+      
+        <p><input asp-for="@Model.customerInfo.Birthday" /></p>
+
+        <label>NationalId</label>
+
+    
+        <p><input asp-for="@Model.customerInfo.NationalId" /></p>
+        <label>Telephonecountrycode</label>
+        <br />
+
+        <p><input asp-for="@Model.customerInfo.Telephonecountrycode" /></p>
+        <label>Telephonenumber</label>
+      
+        <p><input asp-for="@Model.customerInfo.Telephonenumber" /></p>
+        <label>Email</label>
+     
+        <p><input asp-for="@Model.customerInfo.Emailaddress" /></p>
+
+
+        <input type="submit" value="Update" />
+
+        <br /><br /> <br /><br />
+
+    </form>
+</div>
+
+
+

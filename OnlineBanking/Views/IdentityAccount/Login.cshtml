@@ -1,0 +1,24 @@
+﻿@model OnlineBanking.ViewModels.RegisterUserViewModel
+    <div class="card" id="welcome">
+
+        <h1>Sign in </h1>
+
+        <form asp-controller="IdentityAccount" asp-action="Login" method="post">
+
+            <label asp-for="UserName"></label>
+            <input asp-for="UserName" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+
+            <br /><br />
+
+            <label asp-for="Password"></label>
+            <input asp-for="Password"  type="password"/>
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <br /><br />
+
+            <button type="submit">Sign In</button>
+
+
+        </form>
+        </div>

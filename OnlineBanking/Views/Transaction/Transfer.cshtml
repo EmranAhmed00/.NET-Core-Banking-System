@@ -1,0 +1,41 @@
+﻿
+@model OnlineBanking.ViewModels.TransactionViewModel
+
+
+
+    <div class="card" id="welcome">
+        <h1>Transfer:</h1>
+        <br />
+        <form asp-controller="Transaction" asp-action="Transfer" method="post">
+            <div>
+                <label>From Account</label>
+                <input name="fromAcc" type="number" />
+            
+
+
+                <br /><br />
+
+                <label>To Account</label>
+                <input name="toAcc" type="number" />
+               
+                <br />
+                <br />
+
+                <label>Enter the Amount</label>
+
+                <input name="amount" type="text" />
+                <br />
+
+
+                @if ((string)TempData["success"] == "abc")
+                {
+                    <h2 class="text-danger">Invalid or Insufficient Balance !!   </h2>
+                }
+
+                <button type="submit" class="btn btn-primary">Confirm Transfer</button>
+
+
+
+            </div>
+            </form>
+    </div>

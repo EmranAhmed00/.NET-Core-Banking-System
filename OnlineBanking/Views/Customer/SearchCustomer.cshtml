@@ -1,0 +1,89 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model OnlineBanking.ViewModels.CustomerInformationViewModel
+
+<div class=" card">
+    <form asp-controller="Customer" asp-action="SearchCustomer2"  method="get">
+
+        <div class="card" id="welcome">
+            <h2> Search By City or Name   </h2>
+
+            <p>
+                <input type="text" name="search" />
+                <input type="hidden" name="page" value="1" />
+                <input type="submit" value="Search" />
+            </p>
+         
+            <div >
+                <h2> Search by Name and City </h2>
+                <p>
+                    <input type="text"  name="nam" />
+                  
+                    <input type="text"  name="city" />
+                    <input type="submit" value="Search" />
+                </p>
+            </div>
+            @if (Model.pageSize > 0)
+            {
+          
+                    @for( int i= 1; ( i*Model.pageSize) < Model.TotalNumberOfItems + Model.pageSize; i++)
+                     
+                {
+                    <a asp-action="SearchCustomer2" asp-controller="Customer" asp-route-page="@i" asp-route-search="@Model.Search" method="get">Page @i</a>
+
+                }
+            }
+
+
+        </div>
+        
+            <div class="card">
+
+                <table class="table">
+
+                    <thead>
+                        <tr>
+
+                            <th scope="col">CustomerId</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Country</th>
+                            <th scope="col">City</th>
+
+                            <th scope="col">StreetAddress</th>
+                            <th scope="col">NationalId</th>
+                            <th scope="col">Birthday</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model.customerslist != null)
+                        {
+                            @if (Model.customerslist.Count > 0)
+                            {
+                                @foreach (var customer in Model.customerslist)
+                                {
+
+                                    <tr>
+                                        <td><a asp-controller="Customer" asp-action="CustomerInformation" asp-route-id="@customer.CustomerId">@customer.CustomerId</a></td>
+
+                                        <td>@customer.Givenname @customer.Surname</td>
+
+                                        <td>@customer.Country</td>
+                                        <td>@customer.City</td>
+                                        <td>@customer.Streetaddress</td>
+                                        <td>@customer.NationalId</td>
+                                        <td>@customer.Birthday</td>
+                                    </tr>
+
+                                }
+
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        
+</form>
+

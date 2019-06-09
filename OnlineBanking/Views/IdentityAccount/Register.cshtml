@@ -1,0 +1,33 @@
+﻿@model OnlineBanking.ViewModels.RegisterUserViewModel
+
+    <div class="card" id="welcome">
+
+
+        <h1>Register to Access the Account </h1>
+
+        <form asp-controller="IdentityAccount" asp-action="Register" method="post">
+
+            <label asp-for="UserName"></label>
+            <input asp-for="UserName" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+
+            <br /><br />
+
+            <label asp-for="Password"></label>
+            <input asp-for="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+
+            <br /><br />
+
+            <input type="radio" asp-for="RoleName" value="admin" />
+            Admin
+
+            <input type="radio" asp-for="RoleName" value="cashier" />
+            Cashier
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        </div>

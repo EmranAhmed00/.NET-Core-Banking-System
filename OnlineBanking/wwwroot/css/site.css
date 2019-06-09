@@ -1,0 +1,169 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/*a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}*/
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/*Styles start from here */
+
+#create {
+    background-color: floralwhite;
+    width: 600px;
+    margin: auto;
+}
+
+#welcome {
+    width: 100%;
+    font: 25px;
+    color: #900a0b;
+    background-color: lightgoldenrodyellow;
+    width: 600px;
+    font-family: 'Comic Sans MS';
+    text-align: center;
+    margin: auto;
+    padding: 2%;
+}
+
+
+#Statistics{
+
+    background-color:navajowhite;
+}
+
+
+#picture {
+    height: 200px;
+    width: 100%;
+}
+
+
+table {
+    background: #23eae0;
+}
+
+th {
+    border: solid 2px #900a0b;
+    line-height: 20px;
+    font-style: italic;
+    background-color: #65cdab;
+    font-size: 22px;
+    color: rgb(53, 151, 110);
+}
+
+    th:hover {
+        background: #95b199;
+        color: rgb(20, 255, 255);
+    }
+
+td {
+    padding: 1%;
+    font-family: sans-serif;
+    text-align: center;
+    color: rgb(55, 20, 255);
+}
+
+tr th, td {
+    padding: 2% 20px;
+}
+
+tr:hover td {
+    opacity: 2.5;
+    border: solid 2px #b42999;
+    background-color: azure;
+}
+
+td:hover {
+    transform: rotate(10deg);
+    transition-duration: 2s,2s,2s,2s,2s,2s,2s;
+}
+
+tr {
+    background: #98fbb0;
+    opacity: 1.8;
+    border: 3px solid #0320FF;
+}
+
+
+nav a {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    color: #000000;
+    display: inline-block;
+    margin: 4%;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 12%;
+}
+
+.active {
+    background-color: #FFFFFF;
+    color: rgb(158, 23, 192)
+}
+
+
+nav a:hover {
+    background: #affaaf;
+}
+
+a:hover {
+    background: #16e6e6;
+    color: #1809e0;
+}
+
+
+#start1:hover {
+    background:#00bfff	;
+    color: #95b199;
+}

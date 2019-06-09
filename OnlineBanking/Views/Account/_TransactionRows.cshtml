@@ -1,0 +1,48 @@
+﻿
+@model OnlineBanking.ViewModels.AccountInformationViewModel
+
+@foreach (var transaction in Model.Itransactions)
+{
+    <tr>
+        <td>
+            @transaction.TransactionId
+        </td>
+        <td>
+            @transaction.Amount.ToString("C")
+        </td>
+        <td>
+            @transaction.Balance.ToString("C")
+        </td>
+        <td>
+            @transaction.Date.ToString("yyyy-MM-dd ")
+        </td>
+        <td>
+            @transaction.Operation
+        </td>
+    </tr>
+}
+<tr id="buttonRow">
+    <td colspan="3" align="center">
+        @if (Model.CanShowMore)
+        {
+            <div id="spinner" class="spinner-border" style="display: none;" role="status">
+                <span class="sr-only">Laddar...</span>
+            </div>
+            <div>
+                
+                <a data-ajax="true" data-ajax-mode="REPLACE-WITH" data-ajax-update="#buttonRow" class="btn btn-primary"  asp-route-page="@(Model.PageNumber+1)" asp-route-accountId="@Model.Itransactions.FirstOrDefault().AccountId"
+                   data-ajax-loading="#spinner"
+                   role="button">Show More</a>
+            </div>
+
+            // data-ajax-confirm="Är du säker?"
+        }
+        else
+        {
+            <div class="alert alert-primary" role="alert">
+                End of transactions.
+            </div>
+        }
+    </td>
+</tr>
+
